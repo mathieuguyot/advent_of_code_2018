@@ -10,10 +10,14 @@ DEFINE_RELEASE=-w -fpic -DUNIX_GNU -DNDEBUG -O3
 OBJECTS_DEBUG=	debug/aoc_test_main.o \
 				debug/aoc_1.o \
 				debug/aoc_1_test.o \
+				debug/aoc_2.o \
+				debug/aoc_2_test.o \
 
 OBJECTS_RELEASE=release/aoc_test_main.o \
 				release/aoc_1.o \
 				release/aoc_1_test.o \
+				release/aoc_2.o \
+				release/aoc_2_test.o \
 
 OUTPUT_PATH_DEBUG=../build/debug/
 OUTPUT_NAME_DEBUG=aoc_2018

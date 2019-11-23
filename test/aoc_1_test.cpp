@@ -5,7 +5,7 @@
 
 using namespace std;
 
-TEST_CASE("PART 1", "[frequency_sum]") 
+TEST_CASE("AOC1 - PART 1", "[frequency_sum]") 
 {
     auto start_time = begin_aoc(1, 1);
 	
@@ -18,7 +18,7 @@ TEST_CASE("PART 1", "[frequency_sum]")
     end_aoc(start_time);
 }
 
-TEST_CASE("PART 2", "[first_twice_reached_frequecy]") 
+TEST_CASE("AOC1 - PART 2", "[first_twice_reached_frequecy]") 
 {
     auto start_time = begin_aoc(1, 2);
 	
@@ -31,12 +31,12 @@ TEST_CASE("PART 2", "[first_twice_reached_frequecy]")
     end_aoc(start_time);
 }
 
-TEST_CASE("bad path", "[parse_frequency_file]") 
+TEST_CASE("AOC1 - bad path", "[parse_frequency_file]") 
 {
 	REQUIRE(parse_frequency_file("foo.txt").size() == 0);
 }
 
-TEST_CASE("good path", "[parse_frequency_file]") 
+TEST_CASE("AOC1 - good path", "[parse_frequency_file]") 
 {
     Frequencies frequencies = parse_frequency_file("./data/frequencies.txt");
 	REQUIRE(frequencies.size() == 999);
