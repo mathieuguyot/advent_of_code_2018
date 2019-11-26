@@ -1,15 +1,14 @@
 #include <iostream>
 #include <chrono>
 
-inline std::chrono::time_point<std::chrono::high_resolution_clock> begin_aoc(int number, int part)
+inline std::chrono::time_point<std::chrono::high_resolution_clock> get_start_time()
 {
-    std::cout << ">>> PART_" << part << " - AOC_" << number << std::endl;
     return std::chrono::high_resolution_clock::now();
 }
 
-inline void end_aoc(std::chrono::time_point<std::chrono::high_resolution_clock> start_time)
+inline void log_end_aoc_part(std::chrono::time_point<std::chrono::high_resolution_clock> start_time, std::string res, int number, int part)
 {
     auto stop_time = std::chrono::high_resolution_clock::now(); 
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop_time - start_time);
-    std::cout << " <<< ENDED IN " << duration.count() << " MICROSECONDS" << std::endl; 
+    std::cout << "# AOC_" << number << " (PART_" << part << ") (" << duration.count() << " MICROSECONDS) \t\t\t\t: " << res << std::endl; 
 }

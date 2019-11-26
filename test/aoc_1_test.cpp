@@ -1,4 +1,4 @@
-#include <catch.hpp>
+#include <catch2/catch.hpp>
 
 #include "aoc_1.hpp"
 #include "utils.hpp"
@@ -7,28 +7,26 @@ using namespace std;
 
 TEST_CASE("AOC1 - PART 1", "[frequency_sum]") 
 {
-    auto start_time = begin_aoc(1, 1);
+    auto start_time = get_start_time();
 	
-    Frequencies frequencies = parse_frequency_file("./data/frequencies.txt");
+    Frequencies frequencies = parse_frequency_file("../data/frequencies.txt");
     int res = frequency_sum(frequencies);
-    
-    cout << res << endl;
+
     REQUIRE(res == 574);
 
-    end_aoc(start_time);
+    log_end_aoc_part(start_time, to_string(res), 1, 1);
 }
 
 TEST_CASE("AOC1 - PART 2", "[first_twice_reached_frequecy]") 
 {
-    auto start_time = begin_aoc(1, 2);
+    auto start_time = get_start_time();
 	
-    Frequencies frequencies = parse_frequency_file("./data/frequencies.txt");
+    Frequencies frequencies = parse_frequency_file("../data/frequencies.txt");
     int res = first_twice_reached_frequecy(frequencies);
     
-    cout << res << endl;
     REQUIRE(res == 452);
 
-    end_aoc(start_time);
+    log_end_aoc_part(start_time, to_string(res), 1, 2);
 }
 
 TEST_CASE("AOC1 - bad path", "[parse_frequency_file]") 
@@ -38,7 +36,7 @@ TEST_CASE("AOC1 - bad path", "[parse_frequency_file]")
 
 TEST_CASE("AOC1 - good path", "[parse_frequency_file]") 
 {
-    Frequencies frequencies = parse_frequency_file("./data/frequencies.txt");
+    Frequencies frequencies = parse_frequency_file("../data/frequencies.txt");
 	REQUIRE(frequencies.size() == 999);
     REQUIRE(frequencies[0] == 13);
     REQUIRE(frequencies[2] == -8);
